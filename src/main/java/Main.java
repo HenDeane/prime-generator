@@ -8,6 +8,7 @@ public class Main {
 			for (int i = 2; i < randomNum; i++) {
 				if (randomNum % i == 0) {
 					randomNum = (int)(Math.random() * 1001); // 0 to 1000
+				}
 				else {
 					primeNum = randomNum;
 					isNotPrime = false;
