@@ -1,21 +1,20 @@
 public class Main {
 
 	public int generatePrime() {
-		int randomNum = (int)(Math.random() * 1001); // 0 to 1000
-		int primeNum = 3;
+		int randomNum = (int)(Math.random() * 999 + 2); // 2 to 1000
 		boolean isNotPrime = true;
+    
 		while (isNotPrime) {
-			for (int i = 2; i < randomNum; i++) {
+			isNotPrime = false;
+			for (int i = 2; i <= Math.sqrt(randomNum); i++) {
 				if (randomNum % i == 0) {
-					randomNum = (int)(Math.random() * 1001); // 0 to 1000
-				}
-				else {
-					primeNum = randomNum;
-					isNotPrime = false;
+					randomNum = (int)(Math.random() * 999 + 2);
+					isNotPrime = true;
+					break; // Exit the for loop and restart checking the new number
 				}
 			}
 		}
-		return primeNum;
+		return randomNum;
 	}
 
 	public static void main(String... args) {
