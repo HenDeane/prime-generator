@@ -9,6 +9,6 @@ public class MainTest {
     @Test
     public void testSinglePrimeGeneration() {
 		int generatedPrime = primeGenerator.generatePrime();
-		Assert.assertTrue(generatedPrime % 2 == 0);
+		Assert.assertTrue(Primes.isPrime(generatedPrime));
     }
 }
