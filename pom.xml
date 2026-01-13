@@ -5,6 +5,7 @@
 <groupId>uk.ac.open.primegenerator</groupId>
 <artifactId>prime-generator</artifactId>
 <version>1.0-SNAPSHOT</version>
+
 <properties>
     <maven.compiler.release>11</maven.compiler.release>
 </properties>
@@ -18,6 +19,7 @@
                 <version>3.8.1</version>
             </plugin>
             <plugin>
+			    <!-- Build an executable JAR --> 
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.1.0</version>
@@ -34,5 +36,28 @@
         </plugins>
     </pluginManagement>
 </build>
+
+<dependencies>
+    <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.13.2</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-math3</artifactId>
+        <version>3.6.1</version>
+        <scope>test</scope>
+    </dependency>
+</dependencies>
+
+<distributionManagement>
+    <repository>
+        <id>github</id>
+        <name>GitHub Packages</name>
+        <url>https://maven.pkg.github.com/HenDeane/prime-generator</url>
+    </repository>
+</distributionManagement>
 
 </project>
